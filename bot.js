@@ -18,7 +18,7 @@ IxRawan.on('ready', () => {
   IxRawan.on("message", message => {
  
             var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "clear")) {
+            if (message.content.startsWith("E#clear")) {
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **You Dont have `MANAGE_MESSAGES ` Permission**');
    if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send(':x: | **I Dont Have `MANAGE_MESSAGES ` Permission**')
         var msg;
@@ -42,7 +42,7 @@ IxRawan.on('ready', () => {
 
 
   IxRawan.on("message", message => {
-    if (message.content === (prefix + "help")) {
+    if (message.content === ("E#help")) {
      const embed = new Discord.RichEmbed() 
          .setColor("#580e6b")
          .setThumbnail(message.author.avatarURL)
@@ -72,7 +72,7 @@ IxRawan.on('ready', () => {
    }
    });  
 IxRawan.on('message', message => {
-     if (message.content === (prefix + "help")) {
+     if (message.content === ("E#help")) {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#8650a7")
@@ -90,7 +90,7 @@ IxRawan.on('message', message => {
 
 
 IxRawan.on('message', async message => {
-    if(message.content.startsWith(prefix + "voicesetup")) {
+    if(message.content.startsWith("E#voicesetup")) {
     if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply(':x: **You Dont Have `MANAGE_CHANNELS ` Permission**');
     if(!message.guild.member(IxRawan.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply(':x: **I Dont Have `MANAGE_CHANNELS ` Permission**');
     var args = message.content.split(' ').slice(1).join(' ');
@@ -114,7 +114,7 @@ IxRawan.on('message', async message => {
 
 
 IxRawan.on('message', function(msg) {
-    if(msg.content.startsWith (prefix  + 'server')) {
+    if(msg.content.startsWith ('E#server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
@@ -160,7 +160,7 @@ IxRawan.on('message', msg => {
     command = command.slice(prefix.length);
     let args = msg.content.split(" ").slice(1);
   
-      if(command === prefix + "clear") {
+      if(command === "E#clear") {
           const emoji = IxRawan.emojis.find("name", "wastebasket")
       let textxt = args.slice(0).join("");
       if(msg.member.hasPermission("MANAGE_MESSAGES")) {
@@ -183,7 +183,7 @@ IxRawan.on('message', msg => {
 
   IxRawan.on('message', message => {
     if (true) {
-  if (message.content === prefix + 'inv') {
+  if (message.content === 'E#inv') {
         message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=533424638169186314&permissions=8&scope=bot').catch(e => console.log(e.stack));
   
       }
@@ -208,7 +208,7 @@ IxRawan.on('message', msg => {
     if (message.guild) {
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc1') {
+if(message.content.split(' ')[0] == 'E#bc1') {
     if (!args[1]) {
 return;
 }
@@ -239,7 +239,7 @@ IxRawan.on('message', message => {
     if (message.guild) {
     let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
-    if(message.content.split(' ')[0] == prefix + 'bc2') {
+    if(message.content.split(' ')[0] == 'E#bc2') {
     if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
     if (!args[1]) {
     return;
@@ -268,7 +268,7 @@ IxRawan.on('message', message => {
 
     IxRawan.on("message", message => {
 
-        if (message.content.startsWith(prefix + "bc3")) {
+        if (message.content.startsWith("E#bc3")) {
                      if (!message.member.hasPermission("ADMINISTRATOR"))  return;
 let args = message.content.split(" ").slice(1);
 var argresult = args.join(' '); 
@@ -284,19 +284,19 @@ message.delete();
 
 
 IxRawan.on('message',function(message) {
-    if(message.content.startsWith(prefix + "guilds")) {
+    if(message.content.startsWith("E#guilds")) {
         message.channel.send(`Guilds: \`\`${IxRawan.guilds.size}\`\``);
     } 
  });
  //========================================================
  IxRawan.on('message',function(message) {
-    if(message.content.startsWith(prefix + "users")) {
+    if(message.content.startsWith("E#users")) {
         message.channel.send(`Users: \`\`${IxRawan.users.size}\`\``);
     } 
  });
  //=========================================================
  IxRawan.on('message',function(message) {
-    if(message.content.startsWith(prefix + "channels")) {
+    if(message.content.startsWith("E#channels")) {
         message.channel.send(`channels: \`\`${IxRawan.channels.size}\`\``);
     } 
  });
@@ -307,7 +307,7 @@ IxRawan.on('message',function(message) {
 
 
  IxRawan.on('message', message => {
-    if (message.content == prefix + "ask") {
+    if (message.content == "E#ask") {
          message.react('🤔','👌')
         var x = ['اين يلعب مصطفي فتحي؟', 'ما هو اسم ملعب بارشالونة', 'ما هو يوم الحج الأكبر؟', 'ما هو أطول أنهار أوربا ؟', 'ما هو اسم بيت الدجاج', 'ما هو أول بنك قام بالنشاط المصرفي في السعودية عام 1926م' , 'ما هو أول جامع أقيم في مصر','ما هو أطول نهر في آسيا','ما هو أقرب كوكب إلى الشمس','ما هو الحيوان الذي يُسمى البهنس','ما هو اول مسجد أسس بالمدينة','متى وقع صلح الحديبية عام 6هـ او 3هـ او 2هـ؟','متى قامت أمريكا بأول رحلة فضائية','متى كانت غزوة خيبر؟','ما هي السورة التي تبدأ بقوله تعالى " يا أيها النبي اتق الله ولا تطع الكافرين والمنافقين إن الله كان عليما حكيما ".اجب؟','ما هي السورة التي يطلق عليها عروس القرآن','ماذا يسمى من لايقرأ ولايكتب','ماهي أول دولة استخدمت طابع البريد','ماهو شعار الولايات المتحدة الامريكية','ماهو اذكي الحيوانات','من هو مكتشف أمريكا','مامعنى "فرعون" اجب؟','ماهو اقرب كوكب إلى الارض','ما هي نسبه المياه من الكره الارضيه?','كم عدد السجدات في القرآن الكريم؟','من هو بطل كاس العالم في عام 1966','أين أفتتح اول متحف في العالم?','ماأسم أنثى الحمار?','كم تبلغ درجه حراره الشمس؟','من هي مدينة الضباب','أين توجد أطول سكة حديد في العالم?'
         ];
