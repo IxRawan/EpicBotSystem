@@ -19,6 +19,7 @@ IxRawan.on('ready', () => {
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith("E#clear")) {
+				if(!message.channel.guild) return message.reply('** This command only for servers **')
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **You Dont have `MANAGE_MESSAGES ` Permission**');
    if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send(':x: | **I Dont Have `MANAGE_MESSAGES ` Permission**')
         var msg;
@@ -43,6 +44,7 @@ IxRawan.on('ready', () => {
 
   IxRawan.on("message", message => {
     if (message.content === ("E#help")) {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
      const embed = new Discord.RichEmbed() 
          .setColor("#580e6b")
          .setThumbnail(message.author.avatarURL)
@@ -73,6 +75,7 @@ IxRawan.on('ready', () => {
    });  
 IxRawan.on('message', message => {
      if (message.content === ("E#help")) {
+		 if(!message.channel.guild) return message.reply('** This command only for servers **')
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#8650a7")
@@ -91,6 +94,7 @@ IxRawan.on('message', message => {
 
 IxRawan.on('message', async message => {
     if(message.content.startsWith("E#voicesetup")) {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
     if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply(':x: **You Dont Have `MANAGE_CHANNELS ` Permission**');
     if(!message.guild.member(IxRawan.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply(':x: **I Dont Have `MANAGE_CHANNELS ` Permission**');
     var args = message.content.split(' ').slice(1).join(' ');
@@ -115,6 +119,7 @@ IxRawan.on('message', async message => {
 
 IxRawan.on('message', function(msg) {
     if(msg.content.startsWith ('E#server')) {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
@@ -136,6 +141,7 @@ IxRawan.on('message', function(msg) {
 
   IxRawan.on('message', message => {
     if (message.content.startsWith("E#avatar")) {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -161,6 +167,7 @@ IxRawan.on('message', msg => {
     let args = msg.content.split(" ").slice(1);
   
       if(command === "E#clear") {
+		  if(!message.channel.guild) return message.reply('** This command only for servers **')
           const emoji = IxRawan.emojis.find("name", "wastebasket")
       let textxt = args.slice(0).join("");
       if(msg.member.hasPermission("MANAGE_MESSAGES")) {
@@ -184,6 +191,7 @@ IxRawan.on('message', msg => {
   IxRawan.on('message', message => {
     if (true) {
   if (message.content === 'E#inv') {
+	  if(!message.channel.guild) return message.reply('** This command only for servers **')
         message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=533424638169186314&permissions=8&scope=bot').catch(e => console.log(e.stack));
   
       }
@@ -192,7 +200,8 @@ IxRawan.on('message', msg => {
   
   
     IxRawan.on('message', message => {
-       if (message.content === prefix + "inv") {
+       if (message.content === "E#inv") {
+		   if(!message.channel.guild) return message.reply('** This command only for servers **')
        let embed = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setColor("#9B59B6")
@@ -209,6 +218,7 @@ IxRawan.on('message', msg => {
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
 if(message.content.split(' ')[0] == 'E#bc1') {
+	if(!message.channel.guild) return message.reply('** This command only for servers **')
     if (!args[1]) {
 return;
 }
@@ -240,6 +250,7 @@ IxRawan.on('message', message => {
     let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
     if(message.content.split(' ')[0] == 'E#bc2') {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
     if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
     if (!args[1]) {
     return;
@@ -269,6 +280,7 @@ IxRawan.on('message', message => {
     IxRawan.on("message", message => {
 
         if (message.content.startsWith("E#bc3")) {
+			if(!message.channel.guild) return message.reply('** This command only for servers **')
                      if (!message.member.hasPermission("ADMINISTRATOR"))  return;
 let args = message.content.split(" ").slice(1);
 var argresult = args.join(' '); 
@@ -285,18 +297,21 @@ message.delete();
 
 IxRawan.on('message',function(message) {
     if(message.content.startsWith("E#guilds")) {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
         message.channel.send(`Guilds: \`\`${IxRawan.guilds.size}\`\``);
     } 
  });
  //========================================================
  IxRawan.on('message',function(message) {
     if(message.content.startsWith("E#users")) {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
         message.channel.send(`Users: \`\`${IxRawan.users.size}\`\``);
     } 
  });
  //=========================================================
  IxRawan.on('message',function(message) {
     if(message.content.startsWith("E#channels")) {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
         message.channel.send(`channels: \`\`${IxRawan.channels.size}\`\``);
     } 
  });
@@ -308,6 +323,7 @@ IxRawan.on('message',function(message) {
 
  IxRawan.on('message', message => {
     if (message.content == "E#ask") {
+		if(!message.channel.guild) return message.reply('** This command only for servers **')
          message.react('🤔','👌')
         var x = ['اين يلعب مصطفي فتحي؟', 'ما هو اسم ملعب بارشالونة', 'ما هو يوم الحج الأكبر؟', 'ما هو أطول أنهار أوربا ؟', 'ما هو اسم بيت الدجاج', 'ما هو أول بنك قام بالنشاط المصرفي في السعودية عام 1926م' , 'ما هو أول جامع أقيم في مصر','ما هو أطول نهر في آسيا','ما هو أقرب كوكب إلى الشمس','ما هو الحيوان الذي يُسمى البهنس','ما هو اول مسجد أسس بالمدينة','متى وقع صلح الحديبية عام 6هـ او 3هـ او 2هـ؟','متى قامت أمريكا بأول رحلة فضائية','متى كانت غزوة خيبر؟','ما هي السورة التي تبدأ بقوله تعالى " يا أيها النبي اتق الله ولا تطع الكافرين والمنافقين إن الله كان عليما حكيما ".اجب؟','ما هي السورة التي يطلق عليها عروس القرآن','ماذا يسمى من لايقرأ ولايكتب','ماهي أول دولة استخدمت طابع البريد','ماهو شعار الولايات المتحدة الامريكية','ماهو اذكي الحيوانات','من هو مكتشف أمريكا','مامعنى "فرعون" اجب؟','ماهو اقرب كوكب إلى الارض','ما هي نسبه المياه من الكره الارضيه?','كم عدد السجدات في القرآن الكريم؟','من هو بطل كاس العالم في عام 1966','أين أفتتح اول متحف في العالم?','ماأسم أنثى الحمار?','كم تبلغ درجه حراره الشمس؟','من هي مدينة الضباب','أين توجد أطول سكة حديد في العالم?'
         ];
